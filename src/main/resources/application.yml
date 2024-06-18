@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: demotest
+  datasource:
+    url: jdbc:mysql://localhost:3306/todos?serverTimezone=UTC
+    username: root
+    password: 
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+    main:
+      allow-bean-definition-overriding: true
+
+server:
+  port: 9090
+
+auth:
+  expiration: 604800
+  secret: todoAPISecret1234
+  header: Authorization
+
